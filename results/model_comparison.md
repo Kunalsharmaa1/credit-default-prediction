@@ -1,0 +1,13 @@
+# Predictive Analytics Model Comparison Table
+
+| Model                        | Best Hyperparameters                                                                           |   5-Fold CV ROC-AUC |   Test Accuracy |   Test Precision |   Test Recall |   Test Specificity |   Test F1-Score |   Test ROC-AUC |   TN |   FP |   FN |   TP |
+|:-----------------------------|:-----------------------------------------------------------------------------------------------|--------------------:|----------------:|-----------------:|--------------:|-------------------:|----------------:|---------------:|-----:|-----:|-----:|-----:|
+| Logistic Regression          | {'classifier__C': 10.0, 'classifier__class_weight': 'balanced', 'classifier__solver': 'lbfgs'} |              0.7409 |          0.7245 |           0.4194 |        0.6373 |             0.7493 |          0.5058 |         0.7339 | 3497 | 1170 |  481 |  845 |
+| Linear Discriminant Analysis | {'classifier__shrinkage': 'auto', 'classifier__solver': 'lsqr'}                                |              0.7342 |          0.8106 |           0.6792 |        0.273  |             0.9634 |          0.3895 |         0.7257 | 4496 |  171 |  964 |  362 |
+
+## Overfitting and Underfitting Analysis
+
+| Model                        |   Train Accuracy |   Test Accuracy |   Train ROC-AUC |   CV ROC-AUC (5-Fold) |   Test ROC-AUC |   AUC Generalization Gap (Train - Test) |
+|:-----------------------------|-----------------:|----------------:|----------------:|----------------------:|---------------:|----------------------------------------:|
+| Logistic Regression          |           0.7296 |          0.7245 |          0.7437 |                0.7409 |         0.7339 |                                  0.0098 |
+| Linear Discriminant Analysis |           0.8067 |          0.8106 |          0.7365 |                0.7342 |         0.7257 |                                  0.0108 |
